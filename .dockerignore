@@ -1,0 +1,9 @@
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+README.md
+icon.svg
+thumbnail.svg
+screenshot-*.png
+node_modules
