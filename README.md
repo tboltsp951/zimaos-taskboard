@@ -53,19 +53,19 @@ Open `http://<zimaos-ip>:8189`.
 
 ### B. Add it as an app in the ZimaOS app store
 
-1. Push this repo to GitHub (as `your-github-username/zimaos-taskboard`).
-2. Replace every `your-github-username` in `docker-compose.yml` with your
+1. Push this repo to GitHub (as `tboltsp951/zimaos-taskboard`).
+2. Replace every `tboltsp951` in `docker-compose.yml` with your
    actual username.
 3. Build and push the image so ZimaOS can pull it:
    ```sh
    docker login ghcr.io
-   docker build -t ghcr.io/your-github-username/zimaos-taskboard:latest .
-   docker push ghcr.io/your-github-username/zimaos-taskboard:latest
+   docker build -t ghcr.io/tboltsp951/zimaos-taskboard:latest .
+   docker push ghcr.io/tboltsp951/zimaos-taskboard:latest
    ```
    (Or push to Docker Hub and update the `image:` line accordingly.)
 4. In ZimaOS: **Settings → App Store → Add third-party store**, then paste
    the archive URL of your repo:
-   `https://github.com/your-github-username/zimaos-taskboard/archive/refs/heads/main.zip`
+   `https://github.com/tboltsp951/zimaos-taskboard/archive/refs/heads/main.zip`
 5. Install **Task Board**. The default host port is **8189**; change it in the
    UI if you prefer.
 
