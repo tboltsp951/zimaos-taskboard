@@ -15,8 +15,10 @@ living only in the browser's localStorage.
   - Exposes `GET/PUT /__storage__/<key>`, persisted to
     `/data/taskboard.json`.
 - `Dockerfile` builds a `node:20-alpine` image.
-- `docker-compose.yml` is a ZimaOS/CasaOS app manifest (`x-casaos` metadata)
-  that mounts `/DATA/AppData/task-board` into the container.
+- `Apps/TaskBoard/docker-compose.yml` is the ZimaOS/CasaOS app manifest
+  (`x-casaos` metadata) that mounts `/DATA/AppData/task-board` into the
+  container. The `Apps/` folder layout is what ZimaOS's third-party store
+  loader scans for apps.
 
 ## Files
 
@@ -25,10 +27,13 @@ zimaos-taskboard/
   app/
     task-board.html   the app itself (unchanged)
     server.js         web server + storage bridge
+  Apps/
+    TaskBoard/
+      docker-compose.yml   ZimaOS app manifest (store entry)
+      icon.svg             app icon
+      thumbnail.svg        store card image
+      screenshot-1.png     store screenshot
   Dockerfile
-  docker-compose.yml  ZimaOS app manifest
-  icon.svg            app icon
-  thumbnail.svg       store card image
 ```
 
 ## Install on ZimaOS
@@ -54,19 +59,18 @@ Open `http://<zimaos-ip>:8189`.
 ### B. Add it as an app in the ZimaOS app store
 
 1. Push this repo to GitHub (as `tboltsp951/zimaos-taskboard`).
-2. Replace every `tboltsp951` in `docker-compose.yml` with your
-   actual username.
-3. Build and push the image so ZimaOS can pull it:
+2. Build and push the image so ZimaOS can pull it:
    ```sh
    docker login ghcr.io
    docker build -t ghcr.io/tboltsp951/zimaos-taskboard:latest .
    docker push ghcr.io/tboltsp951/zimaos-taskboard:latest
    ```
-   (Or push to Docker Hub and update the `image:` line accordingly.)
-4. In ZimaOS: **Settings → App Store → Add third-party store**, then paste
+   (Or push to Docker Hub and update the `image:` line in
+   `Apps/TaskBoard/docker-compose.yml` accordingly.)
+3. In ZimaOS: **Settings → App Store → Add third-party store**, then paste
    the archive URL of your repo:
    `https://github.com/tboltsp951/zimaos-taskboard/archive/refs/heads/main.zip`
-5. Install **Task Board**. The default host port is **8189**; change it in the
+4. Install **Task Board**. The default host port is **8189**; change it in the
    UI if you prefer.
 
 The icon/thumbnail URLs in the manifest point at raw GitHub files, so they

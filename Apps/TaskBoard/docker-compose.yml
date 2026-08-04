@@ -27,7 +27,7 @@ services:
           description:
             en_US: "Task board data (tasks, people, activity log)"
     labels:
-      icon: "https://raw.githubusercontent.com/tboltsp951/zimaos-taskboard/main/icon.svg"
+      icon: "https://raw.githubusercontent.com/tboltsp951/zimaos-taskboard/main/Apps/TaskBoard/icon.svg"
 
 x-casaos:
   id: org.tbolt.taskboard
@@ -42,12 +42,12 @@ x-casaos:
   description:
     en_US: A lean, local-first task board. Add tasks with quick-add syntax (#tags, +subtasks, due dates), assign people, track progress, and get a weekly digest. Data lives on your NAS.
   developer: tbolt
-  icon: "https://raw.githubusercontent.com/tboltsp951/zimaos-taskboard/main/icon.svg"
+  icon: "https://raw.githubusercontent.com/tboltsp951/zimaos-taskboard/main/Apps/TaskBoard/icon.svg"
   screenshot_link:
-    - "https://raw.githubusercontent.com/tboltsp951/zimaos-taskboard/main/screenshot-1.png"
+    - "https://raw.githubusercontent.com/tboltsp951/zimaos-taskboard/main/Apps/TaskBoard/screenshot-1.png"
   tagline:
     en_US: Your task board, self-hosted
-  thumbnail: "https://raw.githubusercontent.com/tboltsp951/zimaos-taskboard/main/thumbnail.svg"
+  thumbnail: "https://raw.githubusercontent.com/tboltsp951/zimaos-taskboard/main/Apps/TaskBoard/thumbnail.svg"
   tips:
     before_install:
       en_US: |
