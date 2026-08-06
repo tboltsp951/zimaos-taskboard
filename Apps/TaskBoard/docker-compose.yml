@@ -57,7 +57,7 @@ x-casaos:
   title:
     en_US: Task Board
   index: /
-  port_map: "8080"
+  port_map: "8189"
   version: "1.0.0"
   update_at: "2026-08-03"
   release_notes:
